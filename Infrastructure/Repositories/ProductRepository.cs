@@ -18,19 +18,21 @@ namespace Infrastructure.Repositories
             _context = context;
         }
 
-        public Task<ICollection<Product>> GetAll()
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<ICollection<Product?>> GetAll() => await _context.Products.ToListAsync();
 
-        public async Task<Product> GetById(int id)
+        public async Task<Product?> GetById(int id) => await _context.Products.SingleOrDefaultAsync(p => p.Id == id);
+ 
+        public async Task<Product?> UpdateDescription(int id, string description)
         {
-            return await _context.Products.SingleOrDefaultAsync(p => p.Id == id);
-        }
+            var product = GetById(id);
 
-        public Task<Product> UpdateDescription(int id, string description)
-        {
-            throw new NotImplementedException();
+            if (product.Result == null) 
+                return product.Result;
+
+            product.Result.Description = description;
+            await _context.SaveChangesAsync();
+
+            return product.Result;
         }
     }
 }

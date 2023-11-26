@@ -5,6 +5,6 @@ namespace Domain.Interfaces;
 
 public interface IRepository <T> where T : IEntity
 {
-    Task<ICollection<T>> GetAll();
-    Task<T> GetById(int id);
+    Task<ICollection<Product?>> GetAll();
+    Task<T?> GetById(int id);
 }

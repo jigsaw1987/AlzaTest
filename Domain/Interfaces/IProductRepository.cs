@@ -12,6 +12,6 @@ namespace Domain.Interfaces
     /// </summary>
     public interface IProductRepository : IRepository<Product>
     {
-        Task<Product> UpdateDescription(int id, string description);
+        Task<Product?> UpdateDescription(int id, string description);
     }
 }
