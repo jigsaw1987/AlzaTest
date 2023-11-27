@@ -1,18 +1,13 @@
-﻿using Application.Product.Queries;
-using Domain.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Domain.Interfaces;
 using Application.Product.Command;
+using MediatR;
 
 namespace Application.Product.CommandHandlers
 {
     /// <summary>
     /// Handler for update description.
     /// </summary>
-    public class UpdateDescriptionOfProductHandler
+    public class UpdateDescriptionOfProductHandler : IRequestHandler<UpdateDescriptionOfProduct, Domain.Entities.Product?>
     {
         private readonly IProductRepository _repository;
 

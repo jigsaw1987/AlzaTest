@@ -12,6 +12,12 @@ namespace Domain.Interfaces
     /// </summary>
     public interface IProductRepository : IRepository<Product>
     {
+        /// <summary>
+        /// Update product description.
+        /// </summary>
+        /// <param name="id">Unique id of product.</param>
+        /// <param name="description">Description.</param>
+        /// <returns>Updated product or null.</returns>
         Task<Product?> UpdateDescription(int id, string description);
     }
 }
