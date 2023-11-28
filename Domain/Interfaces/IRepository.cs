@@ -1,7 +1,4 @@
-﻿using Domain.DTOs;
-using Domain.Entities;
-
-namespace Domain.Interfaces;
+﻿namespace Domain.Interfaces;
 
 /// <summary>
 /// Interface for repository with common methods

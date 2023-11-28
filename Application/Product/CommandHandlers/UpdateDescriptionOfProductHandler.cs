@@ -7,7 +7,7 @@ namespace Application.Product.CommandHandlers
     /// <summary>
     /// Handler for update description.
     /// </summary>
-    public class UpdateDescriptionOfProductHandler : IRequestHandler<UpdateDescriptionOfProduct, Domain.Entities.Product?>
+    public sealed class UpdateDescriptionOfProductHandler : IRequestHandler<UpdateDescriptionOfProduct, Domain.Entities.Product?>
     {
         private readonly IProductRepository _repository;
 

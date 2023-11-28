@@ -7,7 +7,9 @@ namespace Application.Product.QueriesHandlers
     /// <summary>
     /// Handler of getting all products form database.
     /// </summary>
+#pragma warning disable CS8631 // The type cannot be used as type parameter in the generic type or method. Nullability of type argument doesn't match constraint type.
     public sealed class GetAllProductsHandler : IRequestHandler<GetAllProducts, ICollection<Domain.Entities.Product?>>
+#pragma warning restore CS8631 // The type cannot be used as type parameter in the generic type or method. Nullability of type argument doesn't match constraint type.
     {
         private readonly IProductRepository _productRepository;
 

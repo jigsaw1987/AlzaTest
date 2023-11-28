@@ -28,7 +28,7 @@ namespace Application.Product.QueriesHandlers
         /// <returns>Collection of <see cref="Product"/></returns>
         public async Task<ICollection<Domain.Entities.Product?>> Handle(GetAllProductsWithOffset request, CancellationToken cancellationToken)
         {
-            return await _productRepository.GetAll();
+            return await _productRepository.GetAll(request.Offset, request.Limit);
         }
     }
 }

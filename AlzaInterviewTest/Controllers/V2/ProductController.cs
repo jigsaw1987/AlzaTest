@@ -36,7 +36,11 @@ namespace WepApi.Controllers.V2
         [Route("products")]
         public async Task<ICollection<Product>>GetAllProduct(int offset, int limit)
         {
-            return await _mediator.Send(new GetAllProductsWithOffset());
+            return await _mediator.Send(new GetAllProductsWithOffset()
+            {
+                Offset = offset, 
+                Limit = limit
+            });
         }
 
     }

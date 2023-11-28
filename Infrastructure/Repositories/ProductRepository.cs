@@ -43,6 +43,8 @@ namespace Infrastructure.Repositories
         {
             if(limit == 0) 
                 limit = 10;
+            if (offset > _context.Products.Count())
+                return null;
 
             return await _context.Products.Skip(offset).Take(limit).ToListAsync();
         }
